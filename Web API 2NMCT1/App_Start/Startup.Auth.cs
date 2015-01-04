@@ -10,6 +10,7 @@ using Microsoft.Owin.Security.OAuth;
 using Owin;
 using Web_API_2NMCT1.Providers;
 using Web_API_2NMCT1.Models;
+using ncmt.ba.cashlessproject.api.App_Start;
 
 namespace Web_API_2NMCT1
 {
@@ -32,18 +33,26 @@ namespace Web_API_2NMCT1
             app.UseExternalSignInCookie(DefaultAuthenticationTypes.ExternalCookie);
 
             // Configure the application for OAuth based flow
-            PublicClientId = "self";
-            OAuthOptions = new OAuthAuthorizationServerOptions
-            {
-                TokenEndpointPath = new PathString("/Token"),
-                Provider = new ApplicationOAuthProvider(PublicClientId),
-                AuthorizeEndpointPath = new PathString("/api/Account/ExternalLogin"),
-                AccessTokenExpireTimeSpan = TimeSpan.FromDays(14),
-                AllowInsecureHttp = true
-            };
+            //PublicClientId = "self";
+            //OAuthOptions = new OAuthAuthorizationServerOptions
+            //{
+            //    TokenEndpointPath = new PathString("/Token"),
+            //    Provider = new ApplicationOAuthProvider(PublicClientId),
+            //    AuthorizeEndpointPath = new PathString("/api/Account/ExternalLogin"),
+            //    AccessTokenExpireTimeSpan = TimeSpan.FromDays(14),
+            //    AllowInsecureHttp = true
+            //};
 
             // Enable the application to use bearer tokens to authenticate users
-            app.UseOAuthBearerTokens(OAuthOptions);
+            app.UseOAuthAuthorizationServer(new OAuthAuthorizationServerOptions()
+            {
+                AllowInsecureHttp = true,
+                TokenEndpointPath = new PathString("/token"),
+                AccessTokenExpireTimeSpan = TimeSpan.FromHours(8),
+                Provider = new SimpleAuthorizationServerProvider()
+            });
+
+            app.UseOAuthBearerAuthentication(new OAuthBearerAuthenticationOptions());
 
             // Uncomment the following lines to enable logging in with third party login providers
             //app.UseMicrosoftAccountAuthentication(
