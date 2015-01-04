@@ -60,7 +60,7 @@ namespace nmct.ba.cashlessproject.ui.ViewModel
 
         private TokenResponse GetToken()
         {
-            OAuth2Client client = new OAuth2Client(new Uri("http://localhost:18571/token"));
+            OAuth2Client client = new OAuth2Client(new Uri("http://localhost:18571/Customer"));
             return client.RequestResourceOwnerPasswordAsync(Username, Password).Result;
         }
     }
