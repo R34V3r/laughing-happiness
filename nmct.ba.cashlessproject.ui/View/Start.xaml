@@ -1,0 +1,24 @@
+﻿<UserControl x:Class="nmct.ba.cashlessproject.ui.View.Start"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Height="350" Width="525">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="20px"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="20px"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="80px"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Button Style="{StaticResource buttons}" Name="btnIT" Grid.Column="1" Grid.ColumnSpan="1" Grid.Row="1" Grid.RowSpan="1" Content="IT" Margin="5px"/>
+        <Button Name="btnManagement" Grid.Column="2" Grid.ColumnSpan="1" Grid.Row="1" Grid.RowSpan="1" Content="Management" Margin="5px" Command="{Binding ShowLoginManagement}"/>
+        <Button Name="btnMedewerkers" Grid.Column="3" Grid.ColumnSpan="1" Grid.Row="1" Grid.RowSpan="1" Content="Medewerkers" Margin="5px" Command="{Binding ShowLoginKassa}"/>
+        <Button Name="btnKlanten" Grid.Column="4" Grid.ColumnSpan="1" Grid.Row="1" Grid.RowSpan="1" Content="Klanten" Margin="5px" Command="{Binding ShowLoginKlant}"/>
+    </Grid>
+</UserControl>

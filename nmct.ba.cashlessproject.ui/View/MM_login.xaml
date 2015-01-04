@@ -1,0 +1,32 @@
+﻿<UserControl x:Class="nmct.ba.cashlessproject.ui.View.MM_login"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Height="400" Width="300">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="80px"/>
+            <RowDefinition Height="30px"/>
+            <RowDefinition Height="30px"/>
+            <RowDefinition Height="30px"/>
+            <RowDefinition Height="30px"/>
+            <RowDefinition Height="30px"/>
+            <RowDefinition Height="30px"/>
+            <RowDefinition Height="30px"/>
+            <RowDefinition Height="*"/>
+
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="10px"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="10px"/>
+        </Grid.ColumnDefinitions>
+        <Image Name="imgLogo" Grid.Column="1" Grid.ColumnSpan="1" Grid.Row="1" Grid.RowSpan="1" Width="80px"/>
+        <TextBlock Name="txbOrganizatieNaam" Text="organisation" FontSize="20" Grid.Column="1" Grid.ColumnSpan="1" Grid.Row="2" Grid.RowSpan="1" HorizontalAlignment="Center" />
+        <TextBlock Name="txbLogin" Text="Login" HorizontalAlignment="Center" FontSize="20" Grid.Column="1" Grid.ColumnSpan="1" Grid.Row="3" Grid.RowSpan="1"/>
+        <TextBox Name="txtLogin" Text="{Binding Username}" Grid.Column="1" Grid.ColumnSpan="1" Grid.Row="4" Grid.RowSpan="1" Margin="0" HorizontalContentAlignment="Center" FontSize="20"/>
+        <TextBlock Name="txbPass" Text="Wachtwoord" Grid.Column="1" Grid.ColumnSpan="1" Grid.Row="5" Grid.RowSpan="1" Margin="0" HorizontalAlignment="Center" FontSize="20"/>
+        <TextBox Name="txtPassword" Text="{Binding Password}" Margin="0" Grid.Column="1" Grid.ColumnSpan="1" Grid.Row="6" Grid.RowSpan="1" FontSize="20" HorizontalContentAlignment="Center"/>
+        <Button Name="btnLogin" Command="{Binding LoginCommand}" Content="inloggen" Grid.Column="1" Grid.ColumnSpan="1" Grid.Row="8" Grid.RowSpan="1" Margin="0" HorizontalContentAlignment="Center"/>
+    </Grid>
+</UserControl>

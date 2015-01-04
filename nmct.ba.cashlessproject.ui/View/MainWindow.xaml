@@ -1,0 +1,39 @@
+﻿<Window x:Class="nmct.ba.cashlessproject.ui.View.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:v="clr-namespace:nmct.ba.cashlessproject.ui.View"
+        xmlns:vm="clr-namespace:nmct.ba.cashlessproject.ui.ViewModel"
+        Title="MainWindow" Height="500" Width="600">
+    <Window.DataContext>
+        <vm:ApplicationVM/>
+    </Window.DataContext>
+    <Window.Resources>
+        <DataTemplate DataType="{x:Type vm:StartVM}">
+            <v:Start/>
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type vm:KL_LoginVM}">
+            <v:KL_login/>
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type vm:KL_RegistreerVM}">
+            <v:KL_Registreer/>
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type vm:KlantenVM}">
+            <v:Klanten/>
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type vm:ManagementVM}">
+            <v:Management/>
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type vm:MedewerkersVM}">
+            <v:Medewerkers/>
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type vm:MM_loginVM}">
+            <v:MM_login/>
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type vm:MW_loginVM}">
+            <v:MW_login/>
+        </DataTemplate>
+    </Window.Resources>
+    <Grid>
+        <ContentControl Content="{Binding CurrentPage}"/>
+    </Grid>
+</Window>
