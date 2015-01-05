@@ -222,6 +222,7 @@
     <Compile Include="Controllers\KassaController.cs" />
     <Compile Include="Controllers\LogboekController.cs" />
     <Compile Include="Controllers\ValuesController.cs" />
+    <Compile Include="Controllers\VerenigingController.cs" />
     <Compile Include="DataAcces\Database.cs" />
     <Compile Include="DataAcces\KassaDA.cs" />
     <Compile Include="DataAcces\LogboekDA.cs" />
@@ -230,6 +231,10 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Helper\Database.cs" />
+    <Compile Include="Migrations\201501051620214_databasemigration.cs" />
+    <Compile Include="Migrations\201501051620214_databasemigration.Designer.cs">
+      <DependentUpon>201501051620214_databasemigration.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountBindingModels.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -242,6 +247,8 @@
     <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="App_Data\create.txt" />
+    <Content Include="App_Data\fill.txt" />
     <Content Include="Areas\HelpPage\HelpPage.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
@@ -319,9 +326,7 @@
     <Content Include="Views\Vereniging\Index.cshtml" />
     <Content Include="Views\Vereniging\Nieuw.cshtml" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="App_Data\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
     <Content Include="fonts\glyphicons-halflings-regular.ttf" />
@@ -334,6 +339,11 @@
       <Project>{ae20c614-a07b-44db-ac65-0bde68bf8868}</Project>
       <Name>nmct.ba.cashlessproject.model</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201501051620214_databasemigration.resx">
+      <DependentUpon>201501051620214_databasemigration.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
@@ -353,7 +363,7 @@
           <AutoAssignPort>True</AutoAssignPort>
           <DevelopmentServerPort>18571</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>http://localhost:18571/</IISUrl>
+          <IISUrl>http://localhost:18570/</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>
