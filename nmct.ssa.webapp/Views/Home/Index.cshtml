@@ -1,24 +1,33 @@
-﻿<div class="jumbotron">
-    <h1>ASP.NET</h1>
-    <p class="lead">ASP.NET is a free web framework for building great Web sites and Web applications using HTML, CSS, and JavaScript.</p>
-    <p><a href="http://asp.net" class="btn btn-primary btn-lg">Learn more &raquo;</a></p>
-</div>
+﻿@{
+    ViewBag.Title = "Overzicht";
+}
+
+<h2>Welkom</h2>
+<p>Welkom op ons platform. Hier kan u de kassa's en verenigingen beheren alsook logboeken bekijken van onze applicaties.</p>
+
+<h2>Beheer</h2>
 <div class="row">
     <div class="col-md-4">
-        <h2>Getting started</h2>
-        <p>ASP.NET Web API is a framework that makes it easy to build HTTP services that reach
-        a broad range of clients, including browsers and mobile devices. ASP.NET Web API
-        is an ideal platform for building RESTful applications on the .NET Framework.</p>
-        <p><a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301870">Learn more &raquo;</a></p>
+        <h4>Verenigingen</h4>
+        <p>
+            Op deze pagina zal u een overzicht te zien krijgen van de verschillende verenigingen.
+            U kan ook verenigingen toevoegen/bewerken en de details opvragen.
+        </p>
+        <p><a class="btn btn-primary" href="/Vereniging/Index">Overzicht bekijken</a></p>
     </div>
     <div class="col-md-4">
-        <h2>Get more libraries</h2>
-        <p>NuGet is a free Visual Studio extension that makes it easy to add, remove, and update libraries and tools in Visual Studio projects.</p>
-        <p><a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301871">Learn more &raquo;</a></p>
+        <h4>Kassa's</h4>
+        <p>
+            Op deze pagina zal u een overzicht te zien krijgen van de verschillende kassa's in een vereniging.
+            U kan kassa's maken/toekennen/wijzigen aan een vereniging. Ook kan u een kassa's zoeken per vereniging.
+        </p>
+        <p><a class="btn btn-primary" href="/Kassa/Index">Overzicht bekijken</a></p>
     </div>
     <div class="col-md-4">
-        <h2>Web Hosting</h2>
-        <p>You can easily find a web hosting company that offers the right mix of features and price for your applications.</p>
-        <p><a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301872">Learn more &raquo;</a></p>
+        <h4>Logboeken</h4>
+        <p>
+            Op deze pagina zal u logboeken met foutmeldingen en waarschuwingen kunnen bekijken van de kassa's.
+        </p>
+        <p><a class="btn btn-primary" href="/Logboek/Index">Overzicht bekijken</a></p>
     </div>
-</div>
+</div>>
