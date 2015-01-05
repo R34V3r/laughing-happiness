@@ -187,26 +187,11 @@ namespace nmct.ssa.webapp.DataAcces
             }
         }
 
-        public static int InsertData(DbTransaction trans, string sql, params DbParameter[] parameters)
-        {
-            DbCommand command = null;
-            try
-            {
-                command = BuildCommand(trans, sql, parameters);
-                command.Transaction = trans;
-                command.ExecuteNonQuery();
+        
 
-                command.Parameters.Clear();
-                command.CommandText = "SELECT @@IDENTITY";
+       
 
-                int identity = Convert.ToInt32(command.ExecuteScalar());
-                return identity;
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine(ex.Message);
-                throw;
-            }
-        }
+       
+
     }
 }

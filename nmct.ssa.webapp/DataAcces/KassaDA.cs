@@ -127,7 +127,7 @@ namespace nmct.ssa.webapp.DataAcces
 
         public static int KassaToevoegenVereniging(int kassaId, int verenigingId)
         {
-            string sql = "INSERT INTO [ProjectBA_IT].[dbo].[Organisation_Register] ([OrganisationID],[RegisterID],[FromDate],[UntillDate]) VALUES (@OrganisationId,@RegisterId,null,null)";
+            string sql = "INSERT INTO [dbo].[Organisation_Register] ([OrganisationID],[RegisterID],[FromDate],[UntilDate]) VALUES (@OrganisationId,@RegisterId,null,null)";
             DbParameter par1 = Database.AddParameter(CONNECTIONSTRING, "@OrganisationId", verenigingId);
             DbParameter par2 = Database.AddParameter(CONNECTIONSTRING, "@RegisterId", kassaId);
             return Database.InsertData(CONNECTIONSTRING, sql, par1, par2);
