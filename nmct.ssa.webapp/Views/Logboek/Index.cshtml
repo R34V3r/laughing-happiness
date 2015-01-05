@@ -1,0 +1,38 @@
+﻿@model IEnumerable<nmct.ssa.webapp.PresentationModels.LogboekPM>
+@{
+    ViewBag.Title = "Logboek";
+}
+<h2>Logboek</h2>
+<br />
+@using (Html.BeginForm("Zoek", "Logboek", FormMethod.Get))
+{
+    <p>
+        <select name="kassa">
+            @foreach (var item in ViewBag.Kassas)
+            {
+                <option value="@item.Id">@item.RegisterName</option>
+            }
+        </select>
+        <input class="btn btn-primary" type="submit" value="Zoeken" />
+    </p>
+    <br />
+}
+<table class="table table-striped">
+    <tr>
+        <th class="col-md-1">Kassa</th>
+        <th class="col-md-1">RegisterId</th>
+        <th class="col-md-1">Message</th>
+        <th class="col-md-1">Stacktrace</th>
+        <th class="col-md-1">Timestamp</th>
+    </tr>
+    @foreach (nmct.ssa.webapp.PresentationModels.LogboekPM item in @Model)
+    {
+        <tr>
+            <td class="col-md-1">@item.kassa.RegisterName</td>
+            <td class="col-md-1">@item.logboek.RegisterId</td>
+            <td class="col-md-1">@item.logboek.Message</td>
+            <td class="col-md-1">@item.logboek.Stacktrace</td>
+            <td class="col-md-1">@item.logboek.Timestamp</td>
+        </tr>
+    }
+</table>

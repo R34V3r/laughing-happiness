@@ -1,0 +1,100 @@
+﻿@{
+    ViewBag.Title = "Kassa's";
+}
+<h2>Kassa's Overzicht</h2>
+<br />
+@using (Html.BeginForm("Zoek", "Kassa", FormMethod.Get))
+{
+    <ul class="list-inline">
+        <li>
+            <select name="vereniging">
+                @foreach (var item in ViewBag.Verenigingen)
+                {
+                    <option value="@item.Id">@item.OrganisationName</option>
+                }
+            </select>
+        </li>
+        <li>
+            <input class="btn btn-primary" type="submit" value="Zoek kassa's" />
+        </li>
+        <li style="float:right"><a class="btn btn-primary" href="/Kassa/Wijzigen">Kassa toekennen/wijzigen</a></li>
+        <li style="float:right"><a class="btn btn-primary" href="/Kassa/Nieuw">Nieuwe kassa maken</a></li>
+    </ul>
+}
+<br />
+<div role="tabpanel">
+    <ul class="nav nav-tabs" role="tablist">
+        <li role="presentation" class="active"><a href="#tab1" aria-controls="tab1" role="tab" data-toggle="tab">Beschikbare kassa's</a></li>
+        <li role="presentation"><a href="#tab2" aria-controls="tab2" role="tab" data-toggle="tab">Toegekende kassa's</a></li>
+        <li role="presentation"><a href="#tab3" aria-controls="tab3" role="tab" data-toggle="tab">Alle kassa's</a></li>
+    </ul>
+    <div class="tab-content">
+        <div role="tabpanel" class="tab-pane active" id="tab1">
+            <table class="table table-striped">
+                <tr>
+                    <th class="col-md-1">Kassa Id</th>
+                    <th class="col-md-1">Naam</th>
+                    <th class="col-md-1">Device</th>
+                    <th class="col-md-1">Aankoop datum</th>
+                    <th class="col-md-1">Verloop datum</th>
+                </tr>
+                @foreach (var item in ViewBag.BeschikbareKassas)
+                {
+                    <tr>
+                        <td class="col-md-1">@item.kassa.Id</td>
+                        <td class="col-md-1">@item.kassa.RegisterName</td>
+                        <td class="col-md-1">@item.kassa.Device</td>
+                        <td class="col-md-1">@item.kassa.PurchaseDate</td>
+                        <td class="col-md-1">@item.kassa.ExpiresDate</td>
+                    </tr>
+                }
+            </table>
+        </div>
+        <div role="tabpanel" class="tab-pane" id="tab2">
+            <table class="table table-striped">
+                <tr>
+                    <th class="col-md-1">Kassa Id</th>
+                    <th class="col-md-1">Naam</th>
+                    <th class="col-md-1">Vereniging</th>
+                    <th class="col-md-1">Device</th>
+                    <th class="col-md-1">Aankoop datum</th>
+                    <th class="col-md-1">Verloop datum</th>
+                </tr>
+                @foreach (var item in ViewBag.ToegekendeKassas)
+                {
+                    <tr>
+                        <td class="col-md-1">@item.kassa.Id</td>
+                        <td class="col-md-1">@item.kassa.RegisterName</td>
+                        <td class="col-md-1">@item.vereniging.OrganisationName</td>
+                        <td class="col-md-1">@item.kassa.Device</td>
+                        <td class="col-md-1">@item.kassa.PurchaseDate</td>
+                        <td class="col-md-1">@item.kassa.ExpiresDate</td>
+                    </tr>
+                }
+            </table>
+        </div>
+        <div role="tabpanel" class="tab-pane" id="tab3">
+            <table class="table table-striped">
+                <tr>
+                    <th class="col-md-1">Kassa Id</th>
+                    <th class="col-md-1">Naam</th>
+                    <th class="col-md-1">Vereniging</th>
+                    <th class="col-md-1">Device</th>
+                    <th class="col-md-1">Aankoop datum</th>
+                    <th class="col-md-1">Verloop datum</th>
+                </tr>
+                @foreach (var item in ViewBag.Kassas)
+                {
+                    <tr>
+                        <td class="col-md-1">@item.kassa.Id</td>
+                        <td class="col-md-1">@item.kassa.RegisterName</td>
+                        <td class="col-md-1">@item.vereniging.OrganisationName</td>
+                        <td class="col-md-1">@item.kassa.Device</td>
+                        <td class="col-md-1">@item.kassa.PurchaseDate</td>
+                        <td class="col-md-1">@item.kassa.ExpiresDate</td>
+                    </tr>
+                }
+            </table>
+        </div>
+    </div>
+</div>

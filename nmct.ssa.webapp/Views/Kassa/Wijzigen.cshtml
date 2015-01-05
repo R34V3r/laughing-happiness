@@ -1,0 +1,32 @@
+﻿@{
+    ViewBag.Title = "Wijzigen";
+}
+<h2>Kassa toekennen/wijzigen</h2>
+<p>Voeg een kassa toe aan een vereniging, als de kassa al is toegekend aan een vereniging wordt deze automatisch gewijzigd.</p>
+<br />
+<form action="/Kassa/Wijzigen" method="post">
+    <p>
+        Selecteer een kassa
+    <p />
+    <select name="kassa">
+        @foreach (var item in ViewBag.Kassas)
+        {
+            <option value="@item.Id">@item.RegisterName</option>
+        }
+    </select>
+    <p>
+        Selecteer een vereniging
+    </p>
+    <select name="vereniging">
+        @foreach (var item in ViewBag.Verenigingen)
+        {
+            <option value="@item.Id">@item.OrganisationName</option>
+        }
+    </select>
+    <br />
+    <br />
+    <p>
+        <a href="/Kassa/Index">Terug naar overzicht</a>
+        <input class="btn btn-primary" type="submit" value="Koppelen" />
+    </p>
+</form>

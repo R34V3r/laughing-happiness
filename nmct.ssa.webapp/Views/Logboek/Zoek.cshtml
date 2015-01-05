@@ -1,0 +1,26 @@
+﻿@model IEnumerable<nmct.ssa.webapp.PresentationModels.LogboekPM>
+@{
+    ViewBag.Title = ViewBag.Titel;
+}
+<h2>@ViewBag.Titel</h2>
+<br />
+<table class="table table-striped">
+    <tr>
+        <th class="col-md-1">Toestel</th>
+        <th class="col-md-1">LogId</th>
+        <th class="col-md-1">Bericht</th>
+        <th class="col-md-1">Stacktrace</th>
+        <th class="col-md-1">Tijd</th>
+    </tr>
+    @foreach (nmct.ssa.webapp.PresentationModels.LogboekPM item in @Model)
+    {
+        <tr>
+            <td class="col-md-1">@item.kassa.Device</td>
+            <td class="col-md-1">@item.logboek.RegisterId</td>
+            <td class="col-md-1">@item.logboek.Message</td>
+            <td class="col-md-1">@item.logboek.Stacktrace</td>
+            <td class="col-md-1">@item.logboek.Timestamp</td>
+        </tr>
+    }
+</table>
+<p><a class="btn btn-primary" href="/Logboek/Index">Terug naar overzicht</a></p>

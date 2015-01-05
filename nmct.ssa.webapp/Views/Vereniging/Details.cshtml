@@ -1,0 +1,66 @@
+﻿@model nmct.ba.cashlessproject.model.Web.Vereniging
+@{
+    ViewBag.Title = "Details";
+}
+<h2>Details van @Model.OrganisationName</h2>
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Id)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Id)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Password)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Password)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.DbName)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.DbName)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.DbLogin)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.DbLogin)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.DbPassword)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.DbPassword)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.OrganisationName)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.OrganisationName)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Address)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Address)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Email)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Email)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Phone)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Phone)
+        </dd>
+    </dl>
+    <hr />
+</div>
+<p><a class="btn btn-primary" href="/Vereniging/Index">Terug naar overzicht</a></p>

@@ -1,0 +1,277 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>NLib.ComponentModel.DataAnnotations</name>
+    </assembly>
+    <members>
+        <member name="T:NLib.ComponentModel.DataAnnotations.CompareBaseAttribute">
+            <summary>
+            Provides a base attribute that compares two properties of a model.
+            </summary>
+        </member>
+        <member name="M:NLib.ComponentModel.DataAnnotations.CompareBaseAttribute.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:NLib.ComponentModel.DataAnnotations.CompareBaseAttribute"/> class.
+            </summary>
+            <param name="otherPropertyName">Name of the other property.</param>
+        </member>
+        <member name="M:NLib.ComponentModel.DataAnnotations.CompareBaseAttribute.#ctor(System.String,System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:NLib.ComponentModel.DataAnnotations.CompareBaseAttribute"/> class.
+            </summary>
+            <param name="otherPropertyName">Name of the other property.</param>
+            <param name="errorMessage">The error message.</param>
+        </member>
+        <member name="M:NLib.ComponentModel.DataAnnotations.CompareBaseAttribute.#ctor(System.String,System.Func{System.String})">
+            <summary>
+            Initializes a new instance of the <see cref="T:NLib.ComponentModel.DataAnnotations.CompareBaseAttribute"/> class.
+            </summary>
+            <param name="otherPropertyName">Name of the other property.</param>
+            <param name="errorMessageAccessor">The error message accessor.</param>
+        </member>
+        <member name="M:NLib.ComponentModel.DataAnnotations.CompareBaseAttribute.FormatErrorMessage(System.String)">
+            <summary>
+            Applies formatting to an error message, based on the data field where the error occurred.
+            </summary>
+            <param name="name">The name to include in the formatted message.</param>
+            <returns>An instance of the formatted error message.</returns>
+        </member>
+        <member name="M:NLib.ComponentModel.DataAnnotations.CompareBaseAttribute.IsValid(System.Object,System.ComponentModel.DataAnnotations.ValidationContext)">
+            <summary>
+            Validates the specified value with respect to the current validation attribute.
+            </summary>
+            <param name="value">The value to validate.</param>
+            <param name="validationContext">The context information about the validation operation.</param>
+            <returns>An instance of the <see cref="T:System.ComponentModel.DataAnnotations.ValidationResult"/> class.</returns>
+            <exception cref="T:System.ComponentModel.DataAnnotations.ValidationException">The <paramref name="value"/> does not implement <see cref="T:System.IComparable"/>.</exception>
+            <exception cref="T:System.ComponentModel.DataAnnotations.ValidationException">The <see cref="P:NLib.ComponentModel.DataAnnotations.CompareBaseAttribute.OtherPropertyName"/> does not implement <see cref="T:System.IComparable"/>.</exception>
+            <exception cref="T:System.ComponentModel.DataAnnotations.ValidationException">The <see cref="P:NLib.ComponentModel.DataAnnotations.CompareBaseAttribute.MustBeSameType"/> is true and the type of <paramref name="value"/> and <see cref="P:NLib.ComponentModel.DataAnnotations.CompareBaseAttribute.OtherPropertyName"/> are different.</exception>
+        </member>
+        <member name="M:NLib.ComponentModel.DataAnnotations.CompareBaseAttribute.GetOtherProperty(System.ComponentModel.DataAnnotations.ValidationContext)">
+            <summary>
+            Gets the other property.
+            </summary>
+            <param name="validationContext">The validation context.</param>
+            <returns>The other property.</returns>
+            <exception cref="T:System.ComponentModel.DataAnnotations.ValidationException">The <see cref="P:NLib.ComponentModel.DataAnnotations.CompareBaseAttribute.OtherPropertyName"/> is not found.</exception>
+        </member>
+        <member name="M:NLib.ComponentModel.DataAnnotations.CompareBaseAttribute.IsValid(System.IComparable,System.Object)">
+            <summary>
+            Determines whether the specified current value is valid.
+            </summary>
+            <param name="currentValue">The current value.</param>
+            <param name="otherValue">The other value.</param>
+            <returns>
+              <c>true</c> if the specified current value is valid; otherwise, <c>false</c>.
+            </returns>
+        </member>
+        <member name="P:NLib.ComponentModel.DataAnnotations.CompareBaseAttribute.OtherPropertyName">
+            <summary>
+            Gets the name of the other property.
+            </summary>
+        </member>
+        <member name="P:NLib.ComponentModel.DataAnnotations.CompareBaseAttribute.MustBeSameType">
+            <summary>
+            Gets or sets a value indicating whether the two properties must be the same type or not.
+            </summary>
+        </member>
+        <member name="T:NLib.ComponentModel.DataAnnotations.LessThanOrEqualsToAttribute">
+            <summary>
+            Provides an attribute that compares two properties of a model.
+            Validate if the current property is less than or equals to the other property.
+            </summary>
+        </member>
+        <member name="M:NLib.ComponentModel.DataAnnotations.LessThanOrEqualsToAttribute.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:NLib.ComponentModel.DataAnnotations.LessThanOrEqualsToAttribute"/> class.
+            </summary>
+            <param name="otherPropertyName">Name of the other property.</param>
+        </member>
+        <member name="M:NLib.ComponentModel.DataAnnotations.LessThanOrEqualsToAttribute.IsValid(System.IComparable,System.Object)">
+            <summary>
+            Determines whether the specified current value is valid.
+            </summary>
+            <param name="currentValue">The current value.</param>
+            <param name="otherValue">The other value.</param>
+            <returns>
+              <c>true</c> if the specified current value is valid; otherwise, <c>false</c>.
+            </returns>
+        </member>
+        <member name="T:NLib.ComponentModel.DataAnnotations.GreaterThanOrEqualsToAttribute">
+            <summary>
+            Provides an attribute that compares two properties of a model.
+            Validate if the current property is greater than or equals to the other property.
+            </summary>
+        </member>
+        <member name="M:NLib.ComponentModel.DataAnnotations.GreaterThanOrEqualsToAttribute.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:NLib.ComponentModel.DataAnnotations.GreaterThanOrEqualsToAttribute"/> class.
+            </summary>
+            <param name="otherPropertyName">Name of the other property.</param>
+        </member>
+        <member name="M:NLib.ComponentModel.DataAnnotations.GreaterThanOrEqualsToAttribute.IsValid(System.IComparable,System.Object)">
+            <summary>
+            Determines whether the specified current value is valid.
+            </summary>
+            <param name="currentValue">The current value.</param>
+            <param name="otherValue">The other value.</param>
+            <returns>
+              <c>true</c> if the specified current value is valid; otherwise, <c>false</c>.
+            </returns>
+        </member>
+        <member name="T:NLib.ComponentModel.DataAnnotations.LessThanAttribute">
+            <summary>
+            Provides an attribute that compares two properties of a model.
+            Validate if the current property is less than the other property.
+            </summary>
+        </member>
+        <member name="M:NLib.ComponentModel.DataAnnotations.LessThanAttribute.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:NLib.ComponentModel.DataAnnotations.LessThanAttribute"/> class.
+            </summary>
+            <param name="otherPropertyName">Name of the other property.</param>
+        </member>
+        <member name="M:NLib.ComponentModel.DataAnnotations.LessThanAttribute.IsValid(System.IComparable,System.Object)">
+            <summary>
+            Determines whether the specified current value is valid.
+            </summary>
+            <param name="currentValue">The current value.</param>
+            <param name="otherValue">The other value.</param>
+            <returns>
+              <c>true</c> if the specified current value is valid; otherwise, <c>false</c>.
+            </returns>
+        </member>
+        <member name="T:NLib.ComponentModel.DataAnnotations.GreaterThanAttribute">
+            <summary>
+            Provides an attribute that compares two properties of a model.
+            Validate if the current property is greater than the other property.
+            </summary>
+        </member>
+        <member name="M:NLib.ComponentModel.DataAnnotations.GreaterThanAttribute.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:NLib.ComponentModel.DataAnnotations.GreaterThanAttribute"/> class.
+            </summary>
+            <param name="otherPropertyName">Name of the other property.</param>
+        </member>
+        <member name="M:NLib.ComponentModel.DataAnnotations.GreaterThanAttribute.IsValid(System.IComparable,System.Object)">
+            <summary>
+            Determines whether the specified current value is valid.
+            </summary>
+            <param name="currentValue">The current value.</param>
+            <param name="otherValue">The other value.</param>
+            <returns>
+              <c>true</c> if the specified current value is valid; otherwise, <c>false</c>.
+            </returns>
+        </member>
+        <member name="T:NLib.ComponentModel.DataAnnotations.NotEqualsToAttribute">
+            <summary>
+            Provides an attribute that compares two properties of a model.
+            Validate if the two properties are not equal.
+            </summary>
+        </member>
+        <member name="M:NLib.ComponentModel.DataAnnotations.NotEqualsToAttribute.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:NLib.ComponentModel.DataAnnotations.NotEqualsToAttribute"/> class.
+            </summary>
+            <param name="otherPropertyName">Name of the other property.</param>
+        </member>
+        <member name="M:NLib.ComponentModel.DataAnnotations.NotEqualsToAttribute.IsValid(System.IComparable,System.Object)">
+            <summary>
+            Determines whether the specified current value is valid.
+            </summary>
+            <param name="currentValue">The current value.</param>
+            <param name="otherValue">The other value.</param>
+            <returns>
+              <c>true</c> if the specified current value is valid; otherwise, <c>false</c>.
+            </returns>
+        </member>
+        <member name="T:NLib.ComponentModel.DataAnnotations.EqualsToAttribute">
+            <summary>
+            Provides an attribute that compares two properties of a model.
+            Validate if the two properties are equal.
+            </summary>
+        </member>
+        <member name="M:NLib.ComponentModel.DataAnnotations.EqualsToAttribute.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:NLib.ComponentModel.DataAnnotations.EqualsToAttribute"/> class.
+            </summary>
+            <param name="otherPropertyName">Name of the other property.</param>
+        </member>
+        <member name="M:NLib.ComponentModel.DataAnnotations.EqualsToAttribute.IsValid(System.IComparable,System.Object)">
+            <summary>
+            Determines whether the specified current value is valid.
+            </summary>
+            <param name="currentValue">The current value.</param>
+            <param name="otherValue">The other value.</param>
+            <returns>
+              <c>true</c> if the specified current value is valid; otherwise, <c>false</c>.
+            </returns>
+        </member>
+        <member name="T:NLib.ComponentModel.DataAnnotations.Resources.DataAnnotationsResource">
+            <summary>
+              A strongly-typed resource class, for looking up localized strings, etc.
+            </summary>
+        </member>
+        <member name="P:NLib.ComponentModel.DataAnnotations.Resources.DataAnnotationsResource.ResourceManager">
+            <summary>
+              Returns the cached ResourceManager instance used by this class.
+            </summary>
+        </member>
+        <member name="P:NLib.ComponentModel.DataAnnotations.Resources.DataAnnotationsResource.Culture">
+            <summary>
+              Overrides the current thread's CurrentUICulture property for all
+              resource lookups using this strongly typed resource class.
+            </summary>
+        </member>
+        <member name="P:NLib.ComponentModel.DataAnnotations.Resources.DataAnnotationsResource.CompareBaseAttribute_DoesNotImplementIComparable">
+            <summary>
+              Looks up a localized string similar to &apos;{0}&apos; does not implement IComparable..
+            </summary>
+        </member>
+        <member name="P:NLib.ComponentModel.DataAnnotations.Resources.DataAnnotationsResource.CompareBaseAttribute_PropertiesCannotBeCompared">
+            <summary>
+              Looks up a localized string similar to &apos;{0}&apos; and &apos;{1}&apos; cannot be compared..
+            </summary>
+        </member>
+        <member name="P:NLib.ComponentModel.DataAnnotations.Resources.DataAnnotationsResource.CompareBaseAttribute_TypeMissMatch">
+            <summary>
+              Looks up a localized string similar to &apos;{0}&apos; type ({1}) and &apos;{2}&apos; type ({3}) must be the same..
+            </summary>
+        </member>
+        <member name="P:NLib.ComponentModel.DataAnnotations.Resources.DataAnnotationsResource.CompareBaseAttribute_UnknownProperty">
+            <summary>
+              Looks up a localized string similar to Could not find a property named {0}..
+            </summary>
+        </member>
+        <member name="P:NLib.ComponentModel.DataAnnotations.Resources.DataAnnotationsResource.EqualsToAttribute_ValidationError">
+            <summary>
+              Looks up a localized string similar to &apos;{0}&apos; and &apos;{1}&apos; do not match..
+            </summary>
+        </member>
+        <member name="P:NLib.ComponentModel.DataAnnotations.Resources.DataAnnotationsResource.GreaterThanAttribute_ValidationError">
+            <summary>
+              Looks up a localized string similar to &apos;{0}&apos; must be greater than &apos;{1}&apos;..
+            </summary>
+        </member>
+        <member name="P:NLib.ComponentModel.DataAnnotations.Resources.DataAnnotationsResource.GreaterThanOrEqualsToAttribute_ValidationError">
+            <summary>
+              Looks up a localized string similar to &apos;{0}&apos; must be greater than or equals to &apos;{1}&apos;..
+            </summary>
+        </member>
+        <member name="P:NLib.ComponentModel.DataAnnotations.Resources.DataAnnotationsResource.LessThanAttribute_ValidationError">
+            <summary>
+              Looks up a localized string similar to &apos;{0}&apos; must be less than &apos;{1}&apos;..
+            </summary>
+        </member>
+        <member name="P:NLib.ComponentModel.DataAnnotations.Resources.DataAnnotationsResource.LessThanOrEqualsToAttribute_ValidationError">
+            <summary>
+              Looks up a localized string similar to &apos;{0}&apos; must be less than or equals to &apos;{1}&apos;..
+            </summary>
+        </member>
+        <member name="P:NLib.ComponentModel.DataAnnotations.Resources.DataAnnotationsResource.NotEqualsToAttribute_ValidationError">
+            <summary>
+              Looks up a localized string similar to &apos;{0}&apos; and &apos;{1}&apos; must not match..
+            </summary>
+        </member>
+    </members>
+</doc>

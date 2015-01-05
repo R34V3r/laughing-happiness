@@ -1,0 +1,29 @@
+﻿@model IEnumerable<nmct.ssa.webapp.PresentationModels.KassaPM>
+@{
+    ViewBag.Title = ViewBag.Titel;
+}
+<h2>@ViewBag.Titel</h2>
+<br />
+@if (ViewBag.Titel != "Geen zoekresultaten gevonden.")
+{
+    <table class="table table-striped">
+        <tr>
+            <th class="col-md-1">Kassa Id</th>
+            <th class="col-md-1">Naam</th>
+            <th class="col-md-1">Toestel</th>
+            <th class="col-md-1">Aankoop datum</th>
+            <th class="col-md-1">Verloop datum</th>
+        </tr>
+        @foreach (nmct.ssa.webapp.PresentationModels.KassaPM item in @Model)
+        {
+            <tr>
+                <td class="col-md-1">@item.kassa.Id</td>
+                <td class="col-md-1">@item.kassa.RegisterName</td>
+                <td class="col-md-1">@item.kassa.Device</td>
+                <td class="col-md-1">@item.kassa.PurchaseDate</td>
+                <td class="col-md-1">@item.kassa.ExpiresDate</td>
+            </tr>
+        }
+    </table>
+}
+<p><a class="btn btn-primary" href="/Kassa/Index">Terug naar overzicht</a></p>
